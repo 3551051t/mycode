@@ -64,7 +64,7 @@ func main() {
 			// Print out "you win" message when the player guesses the correct number
 		}
 
-		if try == 3 {
+		if try == guessRounds {
 			// if the number of tries is equal to 3, print game over and also the correct number
 
 			fmt.Printf("Game over!!\n ")
