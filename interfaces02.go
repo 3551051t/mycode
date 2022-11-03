@@ -6,49 +6,63 @@ package main
 import "fmt"
 
 type animal interface {
-    breathe()
-    walk()
+	breathe()
+	walk()
+	snooze()
 }
 
 type tiger struct {
-     age int
+	age int
 }
 
 func (l tiger) breathe() {
-    fmt.Println("tiger breathes")
+	fmt.Println("tiger breathes")
 }
 
 func (l tiger) walk() {
-    fmt.Println("tiger walk")
+	fmt.Println("tiger walk")
+}
+
+func (l tiger) snooze() {
+	fmt.Println("tiger slept hours")
 }
 
 type giraffe struct {
-     age int
+	age int
 }
 
 func (l giraffe) breathe() {
-    fmt.Println("giraffe breathes")
+	fmt.Println("giraffe breathes")
 }
 
 func (l giraffe) walk() {
-    fmt.Println("giraffe walk")
+	fmt.Println("giraffe walk")
+}
+
+func (l giraffe) snooze() {
+	fmt.Println("giraffe slept a bit")
 }
 
 func main() {
-    l := tiger{age: 10}
-    callBreathe(l)
-    callWalk(l)
+	l := tiger{age: 10}
+	callBreathe(l)
+	callWalk(l)
+	callSnooze(l)
 
-    d := giraffe{age: 5}
-    callBreathe(d)
-    callWalk(d)
+	d := giraffe{age: 5}
+	callBreathe(d)
+	callWalk(d)
+	callSnooze(d)
 }
 
 func callBreathe(a animal) {
-    a.breathe()
+	a.breathe()
 }
 
 func callWalk(a animal) {
-    a.walk()
+	a.walk()
 }
 
+func callSnooze(a animal) {
+	a.snooze()
+}
